@@ -49,6 +49,7 @@ def start(update, context):
     context.bot.send_message(chat_id=chat_id, text=message)
 
 
+dispatcher.add_handler(CommandHandler("start", start))
 dispatcher.add_handler(CommandHandler("price", start))
 #Next, we modify the following line from to
 #updater.start_polling()
