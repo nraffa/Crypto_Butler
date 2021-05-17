@@ -55,8 +55,9 @@ dispatcher.add_handler(CommandHandler("start", start))
 
 updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
-                          url_path=telegram_bot_token)
-updater.bot.setWebhook('https://crypto-mayordomo-bot.herokuapp.com/' + telegram_bot_token)
+                          url_path=telegram_bot_token,
+                          webhook_url = 'https://crypto-mayordomo-bot.herokuapp.com/' + telegram_bot_token )
+#updater.bot.setWebhook('https://crypto-mayordomo-bot.herokuapp.com/' + telegram_bot_token)
 
 updater.idle()
 
