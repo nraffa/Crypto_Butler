@@ -1,7 +1,6 @@
 import telegram
 from telegram.ext import Updater
 from telegram.ext import CommandHandler
-from Tracker import get_prices
 import requests
 
 def get_prices():
@@ -53,6 +52,7 @@ def start(update, context):
 dispatcher.add_handler(CommandHandler("start", start))
 #Next, we modify the following line from to
 #updater.start_polling()
+
 updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=telegram_bot_token)
