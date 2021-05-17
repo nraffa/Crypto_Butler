@@ -28,7 +28,7 @@ import os
 PORT = int(os.environ.get('PORT', 5000))
 
 
-telegram_bot_token = "1859659731:AAE548d5qWjZQtTSL4aWzFUvKc0eyTH0lYE"
+telegram_bot_token = '1859659731:AAE548d5qWjZQtTSL4aWzFUvKc0eyTH0lYE'
 
 updater = Updater(token=telegram_bot_token, use_context=True)
 dispatcher = updater.dispatcher
@@ -57,6 +57,8 @@ updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=telegram_bot_token)
 updater.bot.setWebhook('https://crypto-mayordomo-bot.herokuapp.com/' + telegram_bot_token)
+
+updater.idle()
 
 #What this is doing is that it changes the polling method to webhook, listening in to 0.0.0.0 with
 #the port you specified above with the PORT variable. The token refers to the API token of your telegram
