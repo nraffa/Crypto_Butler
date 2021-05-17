@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
 #We first import os, and then set the port number to listen in for the webhook.
 import os
-PORT = int(os.environ.get('PORT', 8443))
+PORT = int(os.environ.get('PORT', 88))
 
 
 telegram_bot_token = '1859659731:AAE548d5qWjZQtTSL4aWzFUvKc0eyTH0lYE'
