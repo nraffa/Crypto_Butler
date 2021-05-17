@@ -4,7 +4,7 @@ from telegram.ext import CommandHandler
 import requests
 
 def get_prices():
-    coins = ["BTC", "ETH", "ADA", "USDT"]
+    coins = ["BTC", "ETH", "ETC", "ADA", "DOGE", "XRP"]
 
     crypto_data = requests.get(
         "https://min-api.cryptocompare.com/data/pricemultifull?fsyms={}&tsyms=USD".format(",".join(coins))).json()["RAW"]
