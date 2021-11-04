@@ -36,7 +36,7 @@ dispatcher = updater.dispatcher
 
 def start(update, context):
     chat_id = update.effective_chat.id
-    message = ""
+    message = "start"
 
     crypto_data = get_prices()
     for i in crypto_data:
@@ -57,7 +57,7 @@ dispatcher.add_handler(CommandHandler("price", start))
 updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=telegram_bot_token,
-                          webhook_url = 'https://crypto-mayordomo-bot.herokuapp.com/' + telegram_bot_token )
+                          webhook_url = 'https://crypto-mayordomo-botv2.herokuapp.com/' + telegram_bot_token )
 #updater.bot.setWebhook('https://crypto-mayordomo-bot.herokuapp.com/' + telegram_bot_token)
 
 updater.idle()
