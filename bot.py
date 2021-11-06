@@ -36,7 +36,7 @@ dispatcher = updater.dispatcher
 
 def start(update, context):
     chat_id = update.effective_chat.id
-    message = "start"
+    message = "I'm your go-to crypto bot, please talk to me!\n Press /start so I can give you last updates on cryptocurrencies."
 
     crypto_data = get_prices()
     for i in crypto_data:
@@ -49,7 +49,12 @@ def start(update, context):
     context.bot.send_message(chat_id=chat_id, text=message)
 
 
-dispatcher.add_handler(CommandHandler("start", start))
+#The goal is to have this function called every time the Bot receives a Telegram message that 
+#contains the /start command. To accomplish that, you can use a CommandHandler 
+#(one of the provided Handler subclasses) and register it in the dispatcher:
+start_handler = CommandHandler('start', start)
+dispatcher.add_handler(start_handler)
+
 dispatcher.add_handler(CommandHandler("caca", start))
 #Next, we modify the following line from to
 #updater.start_polling()
