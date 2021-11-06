@@ -36,12 +36,12 @@ dispatcher = updater.dispatcher
 
 def start(update, context):
     chat_id = update.effective_chat.id
-    message = "I'm your go-to crypto bot, please talk to me!\nPress /start so I can give you last updates on cryptocurrencies."
+    message = "I'm your go-to crypto bot, please talk to me!\nPress /prices so I can give you last updates on cryptocurrencies."
     context.bot.send_message(chat_id=chat_id, text=message)
 
 def prices(update, context):
     chat_id_prices = update.effective_chat.id
-    message_prices = "I'm your go-to crypto bot, please talk to me!\nPress /start so I can give you last updates on cryptocurrencies."
+    message_prices = "This are the latest updates on the prices of Bitcoin, Ethereum, Cardano and others.\nIf you have any feedback for me, press on /feedback."
 
     crypto_data = get_prices()
     for i in crypto_data:
@@ -53,6 +53,12 @@ def prices(update, context):
 
     context.bot.send_message(chat_id=chat_id_prices, text=message_prices)
 
+def feedback(update, context):
+    chat_id_feedback = update.effective_chat.id
+    message_feedback = "Please send me your feedback!\nPress /start to go back to the main menu."
+    context.bot.send_message(chat_id=chat_id_feedback, text=message_feedback)
+    
+
 
 #The goal is to have this function called every time the Bot receives a Telegram message that 
 #contains the /start command. To accomplish that, you can use a CommandHandler 
@@ -62,6 +68,9 @@ dispatcher.add_handler(start_handler)
 
 price_handler = CommandHandler('prices', prices)
 dispatcher.add_handler(price_handler)
+
+feedback_handler = CommandHandler('feedback', feedback)
+dispatcher.add_handler(feedback_handler)
 
 #Next, we modify the following line from to
 #updater.start_polling()
