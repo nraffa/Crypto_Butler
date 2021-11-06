@@ -36,7 +36,12 @@ dispatcher = updater.dispatcher
 
 def start(update, context):
     chat_id = update.effective_chat.id
-    message = "I'm your go-to crypto bot, please talk to me!\n Press /start so I can give you last updates on cryptocurrencies."
+    message = "I'm your go-to crypto bot, please talk to me!\nPress /start so I can give you last updates on cryptocurrencies."
+    context.bot.send_message(chat_id=chat_id, text=message)
+
+def prices(update, context):
+    chat_id_prices = update.effective_chat.id
+    message_prices = "I'm your go-to crypto bot, please talk to me!\nPress /start so I can give you last updates on cryptocurrencies."
 
     crypto_data = get_prices()
     for i in crypto_data:
@@ -44,9 +49,9 @@ def start(update, context):
         price = crypto_data[i]["price"]
         change_day = crypto_data[i]["change_day"]
         change_hour = crypto_data[i]["change_hour"]
-        message += f"Coin: {coin}\nPrice: ${price:,.2f}\nHour Change: {change_hour:.3f}%\nDay Change: {change_day:.3f}%\n\n"
+        message_prices += f"Coin: {coin}\nPrice: ${price:,.2f}\nHour Change: {change_hour:.3f}%\nDay Change: {change_day:.3f}%\n\n"
 
-    context.bot.send_message(chat_id=chat_id, text=message)
+    context.bot.send_message(chat_id=chat_id_prices, text=message_prices)
 
 
 #The goal is to have this function called every time the Bot receives a Telegram message that 
@@ -55,7 +60,9 @@ def start(update, context):
 start_handler = CommandHandler('start', start)
 dispatcher.add_handler(start_handler)
 
-dispatcher.add_handler(CommandHandler("caca", start))
+price_handler = CommandHandler('prices', prices)
+dispatcher.add_handler(price_handler)
+
 #Next, we modify the following line from to
 #updater.start_polling()
 
