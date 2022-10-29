@@ -20,7 +20,6 @@ https://towardsdatascience.com/how-to-deploy-a-telegram-bot-using-heroku-for-fre
 https://min-api.cryptocompare.com
 
 ## Example of conversation
-![WhatsApp Image 2022-10-29 at 15 54 36](https://user-images.githubusercontent.com/50913652/198835921-23d70e61-5e4d-4f2c-b684-2ede3618e480.jpeg)
+![1d902ca6-b4c2-4feb-870e-b673515a7fea](https://user-images.githubusercontent.com/50913652/198836171-0d0af0ce-45ec-4594-bb7a-f0c313fbee50.jpg)
 
-![WhatsApp Image 2022-10-29 at 15 54 36 (1)](https://user-images.githubusercontent.com/50913652/198835923-29e8cce8-55bc-48d3-850a-ca82e6191dfd.jpeg)
-
+![e7c2602e-8405-4452-8d8d-a692c8e863ce](https://user-images.githubusercontent.com/50913652/198836177-03db31a7-d6b1-4a88-83ba-7ee96847a0d4.jpg)
